@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     // Initialize Terraform (use the existing GCS bucket for state)
-                    sh 'terraform init -backend-config="bucket=${params.GCS_BUCKET}"'
+                    sh 'terraform init -backend-config="bucket=bits-voting-tf-state" -backend-config="prefix=terraform/state"'
                 }
             }
         }
