@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Run terraform plan with the specified variables file
-                    sh 'terraform plan -var-file="terraform.tfvars -var "gcp_credentials_file=${GOOGLE_APPLICATION_CREDENTIALS}"'
+                    sh 'terraform plan -var-file="terraform.tfvars" -var "gcp_credentials_file=${GOOGLE_APPLICATION_CREDENTIALS}"'
                 }
             }
         }
@@ -43,7 +43,7 @@ pipeline {
             steps {
                 script {
                     // Apply the Terraform configuration to create the GKE cluster
-                    sh 'terraform apply -var-file="terraform.tfvars" -var "gcp_credentials_file=${GOOGLE_APPLICATION_CREDENTIALS} -auto-approve'
+                    sh 'terraform apply -var-file="terraform.tfvars" -var "gcp_credentials_file=${GOOGLE_APPLICATION_CREDENTIALS}" -auto-approve'
                 }
             }
         }
