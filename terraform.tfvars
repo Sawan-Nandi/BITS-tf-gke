@@ -1,0 +1,5 @@
+project_id          = "your-gcp-project-id"
+region              = "us-central1"
+gcs_bucket          = "your-gcs-bucket"
+cluster_name        = "your-cluster-name"
+gcp_credentials_file = "path/to/your/sa-key.json"
